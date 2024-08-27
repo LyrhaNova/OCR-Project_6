@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
     const token = authorization.split(' ')[1];
     console.log('Token:', token); // Voir le contenu du token
 
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+    const decodedToken = jwt.verify(token, 'kljsdf156198fzef312sdf15');
     console.log('Decoded Token:', decodedToken); // Voir le contenu du token décodé
     console.log(
       'JWT_SECRET lors de la vérification du token (auth) :',

@@ -50,9 +50,13 @@ exports.login = (req, res, next) => {
           }
 
           console.log('Mot de passe correct, génération du token');
-          const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-            expiresIn: '24h',
-          });
+          const token = jwt.sign(
+            { userId: user._id },
+            'kljsdf156198fzef312sdf15',
+            {
+              expiresIn: '24h',
+            }
+          );
           console.log(
             'JWT_SECRET lors de la génération du token (user) :',
             process.env.JWT_SECRET
