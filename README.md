@@ -59,7 +59,7 @@ git pull origin main
 
 ### Fichier .env
 
-Afin d'assurer le bon fonctionnement du code, vous devez créer un fichier ``.env`` avec les variables suivantes et les remplir selon votre environnement de développement :
+Afin d'assurer le bon fonctionnement de l'App, vous devez créer un fichier ``.env`` avec les variables suivantes et les remplir selon votre environnement de développement, dans le dossier ``backend`` :
 ````
 JWT_SECRET=clé secrète jwt
 PORT=port privilégié (4000 frontend)
