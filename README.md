@@ -83,14 +83,6 @@ Le projet sera accessible par défaut à l'adresse suivante :
 http://localhost:4000/
 ````
 
-### Documentation supplémentaire
-Pour plus d'informations sur les outils et bibliothèques utilisés dans ce projet, consultez leur documentation officielle :
-
-- [React](https://fr.react.dev/)
-- [Vite](https://vitejs.fr/guide/)
-- [React Router](https://reactrouter.com/en/main)
-- [NPM](https://docs.npmjs.com/)
-
 ### Structure du projet
 ````
 ├── controllers           # Gère la logique des opérations CRUD
