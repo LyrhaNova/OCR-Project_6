@@ -1,14 +1,15 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
+// Controller signup
 exports.signup = (req, res, next) => {
-  console.log('Requête de signup reçue:', req.body);
-
+  // Hachage du mot de passe avec bcrypt
   bcrypt
     .hash(req.body.password, 10)
     .then((hash) => {
+      // Création d'un nouvel utilisateur avec l'email et le mot de passe haché
       const user = new User({
         email: req.body.email,
         password: hash,
@@ -25,9 +26,9 @@ exports.signup = (req, res, next) => {
     });
 };
 
+// Controller login
 exports.login = (req, res, next) => {
-  console.log('Requête de login reçue:', req.body);
-
+  // Recherche de l'utilisateur par email dans la base de données
   User.findOne({ email: req.body.email })
     .then((user) => {
       if (!user) {
@@ -39,6 +40,7 @@ exports.login = (req, res, next) => {
 
       console.log('Utilisateur trouvé:', user);
 
+      // Comparaison du mot de passe fourni avec le mot de passe haché en base de données
       bcrypt
         .compare(req.body.password, user.password)
         .then((valid) => {
@@ -50,19 +52,13 @@ exports.login = (req, res, next) => {
           }
 
           console.log('Mot de passe correct, génération du token');
-          const token = jwt.sign(
-            { userId: user._id },
-            'kljsdf156198fzef312sdf15',
-            {
-              expiresIn: '24h',
-            }
-          );
-          console.log(
-            'JWT_SECRET lors de la génération du token (user) :',
-            process.env.JWT_SECRET
-          );
 
-          console.log('Token:', token);
+          // Génération d'un token JWT contenant l'ID utilisateur et une expiration de 24h
+          const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+            expiresIn: '24h',
+          });
+
+          // Envoi de la réponse avec l'ID utilisateur et le token
           res.status(200).json({
             userId: user._id,
             token: token,
