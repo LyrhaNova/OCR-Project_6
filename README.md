@@ -76,7 +76,7 @@ nodemon server
 ````
 Puis, exécutez dans le dossier front-end :
 ````
-npm run dev
+npm run start
 ````
 Le projet sera accessible par défaut à l'adresse suivante :
 ````
@@ -94,7 +94,7 @@ http://localhost:4000/
 ├── package-lock.json     # Gère les versions exactes des dépendances
 ├── package.json          # Dépendances et scripts NPM
 └── server.js             # Démarre le serveur
-````
+└── (.env)                # Contient less variables environnement
 
 ## CONSTRUIT AVEC
 
