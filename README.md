@@ -10,7 +10,8 @@ Dans le cadre de la formation OpenClassRooms en Développement web, le ``PROJET 
 - 📄 [Scénario](#scenario)
 - ⬆️ [Objectifs pédagogiques](#objectifs-pedagogiques)
 - 🚀 [Installation](#installation)
-- 🏗️ [Construit avec](#construit-avec)
+- 🏗️ [Structure du projet](#structure-du-projet)
+- 🖼 [Galerie d'images](#galerie-dimages)
 
 ## SCENARIO
 
@@ -112,3 +113,10 @@ http://localhost:4000/
 | ``VISUAL STUDIO CODE`` | _IDE_                                          |
 | ``GIT``                | _Logiciel de gestion de versions_              |
 | ``MongoDB``            | _Service de base de données_                   |
+````
+
+## Galerie d'images
+
+![Capture 1](https://i.imgur.com/bQVnR9n.png)
+
+![Capture 2](https://i.imgur.com/8LRaGKN.png)
